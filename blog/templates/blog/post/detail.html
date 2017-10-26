@@ -25,7 +25,7 @@
     <h2>Your comment has being added</h2>
   {% else %}
     <h2>Add a new comment</h2>
-    <form action="{{ post.get_absolute_url }}" method="post">
+    <form action="{{ url "blog:post_detail" post.slug }}" method="post">
       {{ comment_form.as_p }}
       {% csrf_token %}
       <p><input type="submit" value="Add comment"></p>
